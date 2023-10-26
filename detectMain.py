@@ -14,7 +14,7 @@ while (True):
     ret, image_goc = cap.read()
     image_goc = cv2.resize(image_goc, (300, 250), fx=0.5, fy=0.5) #lam khung camera
     detections = my_model(image_goc)
-    results = detections.pandas().xyxy[0].to_dict(orient="records") #chua hieu
+    results = detections.pandas().xyxy[0].to_dict(orient="records") 
     for result in results:
         class_name = result['name']
         ID = result['class']
